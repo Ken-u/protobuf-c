@@ -1,0 +1,13 @@
+cc_library_headers {
+    name: "libprotobuf-c-headers",
+    export_include_dirs: ["include"],
+}
+
+cc_library {
+    name: "libprotobuf-c",
+    srcs: ["src/libprotobuf/protobuf-c.c",],
+    header_libs: ["libprotobuf-c-headers"],
+    export_header_lib_headers: ["libprotobuf-c-headers"],
+    cppflags: ["-Wno-error",],
+    owner: "google",
+}
